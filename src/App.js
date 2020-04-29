@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { Radio, Button } from 'antd'
+import React, { useState } from 'react'
+import { Button } from 'reactstrap'
 import { myQuestions } from './data'
-import { Answer } from './containers'
+import { Answer } from './components'
 
 export const App = () => {
 	const [data, setData] = useState(myQuestions)
@@ -13,18 +13,12 @@ export const App = () => {
 			[e.target.name]: e.target.value,
 		})
 	}
-	const handleSubmit = () => {
-		const answer = {
-			value,
-		}
-		checkAnswer()
-	}
 
 	const checkAnswer = () => {
-		// const answer = {
-		// 	value,
-		// }
-		console.log(data.map(e => e.correctAnswer))
+		console.log(...data)
+	}
+
+	const checkValid = () => {
 		
 	}
 
@@ -40,14 +34,14 @@ export const App = () => {
 									onChange={handleChange}
 									answers={e.answers}
 									value={value}
-									name={e.question}
+									name={i}
 								/>
 							}
 						</div>
 					)
 				})}
 			</ol>
-			<button onClick={handleSubmit}>Submit</button>
+			<Button onClick={checkAnswer} outline color="success">Submit</Button>
 		</div>
 	)
 }
