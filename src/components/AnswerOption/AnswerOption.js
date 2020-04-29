@@ -1,7 +1,7 @@
 import React from 'react'
 import { CustomInput } from 'reactstrap'
 
-export const Answer = ({ answers, onChange, name }) => {
+export const AnswerOption = ({ answers, onChange, name, disabled }) => {
 	return (
 		<div>
 			{answers.map((e, i) => {
@@ -14,6 +14,7 @@ export const Answer = ({ answers, onChange, name }) => {
 							name={name}
 							label={e}
 							id={e}
+							disabled={disabled}
 						/>
 					</div>
 				)

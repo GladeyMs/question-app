@@ -1,2 +1,2 @@
-export * from './Answer'
-export * from './Question'
+export * from './AnswerOption'
+export * from './AnswerCheck'
